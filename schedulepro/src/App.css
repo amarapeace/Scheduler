@@ -1,3 +1,13 @@
+.main {
+  display: flex;
+
+}
+.sidebar {
+  flex-basis: 15%;
+}
+.mainbar {
+  flex-basis: 80%;
+}
 .header{
   height: 200px;
   width: 100%;
@@ -9,6 +19,7 @@
   height: 300px;
   width: 300px;
   box-shadow: 0px 3px 50px #A5A5A5;
+  
 }
 
 .card-wrapper{
@@ -49,4 +60,11 @@
   flex-wrap: wrap;
   background-color: #F6F7F8;
   padding : 40px 100px;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
 }
