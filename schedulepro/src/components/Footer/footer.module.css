@@ -41,6 +41,25 @@
 	align-items: center;
 	gap: 14.78px;
 	filter: brightness(1) invert(1);
+
+}
+.socialslogo {
+	margin-top: 24px;
+	display: flex;
+	align-items: center;
+	gap: 14.78px;
+	filter: brightness(1) invert(1);
+
+}
+.socialslogo img {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+}
+.socials img {
+	width: 2rem;
+	height: 2rem;
+	/* border-radius: 50%; */
 }
 
 .product,

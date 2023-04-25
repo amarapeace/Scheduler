@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./hero3.module.css";
-import LandingHero from "./LandingHero.webp";
+// import LandingHero from "./LandingHero.webp";
+// import hero1 from "../images/hero1.jpg";
+// import hero2 from "../images/hero2.jpg";
+import hero4 from "../images/hero4.jpg";
 import Signup from "../Signup";
 import Login from "../Login";
 
-function Hero() {
+const Hero = () => {
   const navigate = useNavigate();
 
   const [signupModal, setSignupModal] = useState(false);
@@ -29,21 +32,25 @@ function Hero() {
 
   const loginUser = (userObj) => {
     const storedUsers = JSON.parse(localStorage.getItem("userList"));
-    const storedUser = storedUsers.find(
-      (user) =>
-        user.email === userObj.email && user.password === userObj.password
-    );
-    if (storedUser) {
-      console.log("Login successful!");
-      setLoginModal(false);
-      navigate("/TodoList");
+    if (storedUsers) {
+      const storedUser = storedUsers.find(
+        (user) =>
+          user.email === userObj.email && user.password === userObj.password
+      );
+      if (storedUser) {
+        console.log("Login successful!");
+        setLoginModal(false);
+        navigate('/todolist');
+      }
+      else {
+        alert("Invalid credentials");
+      }
     } else {
-      console.log("Invalid credentials");
-    }
-  };
+      alert("No user data found. Please sign up to continue.");
+    }};
 
   return (
-    <div className={styles.herosect}>
+    <div className={styles.herosect} style={{ padding: "30px" }} id='hero'>
       <div className={styles.hero}>
         <div className={styles.heroText}>
           <h1>Manage your daily activity so easy</h1>
@@ -72,7 +79,7 @@ function Hero() {
           </button>
         </div>
         <div className={styles.heroImg}>
-          <img src={LandingHero} alt="LandingHero" />
+          <img src={hero4} alt="LandingHero" />
         </div>
       </div>
       <Signup toggle={toggleSignup} modal={signupModal} save={saveUser} />

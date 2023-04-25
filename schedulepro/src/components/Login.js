@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import emailjs from "@emailjs/browser";
 
-const Login = ({ modal, toggle, login }) => {
+
+const Login = ({ modal, toggle, login, userData }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,6 +24,38 @@ const Login = ({ modal, toggle, login }) => {
     userData["password"] = password;
     login(userData);
   };
+//  const onFinish = (values) => {
+//    const templateParams = {
+//      to_email: userData.email,
+//      subject: values.subject,
+//      message: values.message,
+//      attachment: values.attachment ? values.attachment[0].originFileObj : null,
+//    };
+
+//    emailjs
+//      .send(
+//        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+//        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+//        templateParams,
+//        process.env.REACT_APP_EMAILJS_USER_ID
+//      )
+//      .then(
+//        (response) => {
+//          console.log("SUCCESS!", response.status, response.text);
+//         //  message.success("Email sent successfully!");
+//        },
+//        (error) => {
+//          console.log("FAILED...", error);
+//         //  message.error("Failed to send email.");
+//        }
+//      );
+//  };
+
+//  const onFinishFailed = (errorInfo) => {
+//    console.log("Failed:", errorInfo);
+//   //  message.error("Failed to send email. Please fill in all required fields.");
+//  };
+
 
   return (
     <Modal isOpen={modal} toggle={toggle}>

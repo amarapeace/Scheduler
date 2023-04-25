@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import Logo from "../components/logo.jpeg";
 import { UilSignOutAlt } from "@iconscout/react-unicons";
@@ -7,6 +8,7 @@ import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
 
 const Sidebar = () => {
+  const navigate = useNavigate()
   const [selected, setSelected] = useState(0);
 
   const [expanded, setExpaned] = useState(true)
@@ -19,9 +21,11 @@ const Sidebar = () => {
       left : '-60%'
     }
   }
-  // console.log(window.innerWidth)
 
-  
+  const logout = () => {
+    localStorage.removeItem("userList");
+    navigate("/");
+  };
   return (
     <>
       <div
@@ -39,12 +43,9 @@ const Sidebar = () => {
         {/* logo */}
         <div className="logo">
           <a href="/">
-
-          <img src={Logo} alt="logo"/>
+            <img src={Logo} alt="logo" />
           </a>
-          {/* <span>
-            Ta<span>s</span>ks
-          </span> */}
+          
         </div>
 
         <div className="menu">
@@ -61,13 +62,13 @@ const Sidebar = () => {
               </a>
             );
           })}
-          {/* signoutIcon */}
-          
         </div>
       </motion.div>
-
-      {/* signoutIcon */}
-      
+      <div className="logoutdiv">
+      <UilSignOutAlt className='logouticon'/>
+        <button onClick={logout} className="logoutbtn">Logout</button>
+       
+      </div>
     </>
   );
 };

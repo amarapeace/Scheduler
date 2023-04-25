@@ -1,16 +1,16 @@
 // Sidebar imports
 import {
-  UilEstate,
+  // UilEstate,
   UilClipboardAlt,
   UilUsersAlt,
   UilPackage,
   UilChart,
-  UilSignOutAlt,
+  // UilSignOutAlt,
 } from "@iconscout/react-unicons";
 
 // Analytics Cards imports
 import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
+// import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 // Recent Card Imports
 // import img1 from "../imgs/img1.png";
@@ -30,9 +30,9 @@ export const SidebarData = [
     heading: "Tasks",
   },
   {
-    id: "users",
-    icon: UilUsersAlt,
-    heading: "Users",
+    id: "calendar",
+    icon: UilChart,
+    heading: "Calendar",
   },
   {
     id: "completedtasks",
@@ -40,15 +40,16 @@ export const SidebarData = [
     heading: "Completed Tasks",
   },
   {
-    id: "calendar",
-    icon: UilChart,
-    heading: "Calendar",
+    id: "users",
+    icon: UilUsersAlt,
+    heading: "Users",
   },
-  {
-    id: "logout",
-    icon: UilSignOutAlt,
-    heading: "Logout",
-  },
+
+  // {
+  //   id: "logout",
+  //   icon: UilSignOutAlt,
+  //   heading: "Logout",
+  // },
 ];
 
 // Analytics Cards Data
