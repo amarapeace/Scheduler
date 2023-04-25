@@ -28,7 +28,16 @@
   width: 15rem;
   height: 15rem;
 }
-
+.logoutdiv {
+  width: 80%;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  border-radius: 8px;
+}
+.logoutbtn {
+  border: none;
+  background-color: transparent;
+}
 
 /* menu */
 .menu {
@@ -76,25 +85,31 @@
 
 
 /* Tablets */
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .menuItem>span{
     display: none;
   }
   .logo{
     display: none;
   }
-}
+} */
 
 @media screen and (max-width: 768px) {
+  .menuItem>span{
+    display: none;
+  }
+  .logo{
+    display: none;
+  }
   .sidebar{
     position: fixed;
     z-index: 9;
     background: #ffe0e0;
-    width: 55%;
+    width: 20%;
     padding-right: 1rem;
     height: 100%;
   }
-  .menuItem>span{
+  /* .menuItem>span{
     display: block;
   }
   .logo{
@@ -103,7 +118,7 @@
   .menu .menuItem:last-child {
     position: relative;
     margin-top: 6rem;
-  }
+  } */
   .bars{
     display: flex;
     position: fixed;
@@ -115,7 +130,14 @@
     z-index: 9;
   }
   .close{
-    left: -60%;
+    left: 60%;
+  }
+  .logoutbtn {
+    display: none;
+  }
+  .logouticon{
+position: relative;
+top: 500px;
   }
 }
 

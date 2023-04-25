@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import EditTask from '../modals/EditTask'
 
 const Card = ({taskObj, index, deleteTask, updateListArray, isDone}) => {
+  // console.log(JSON.stringify(taskObj.Date))
     const [modal, setModal] = useState(false);
 
     const colors = [
@@ -41,7 +42,10 @@ const Card = ({taskObj, index, deleteTask, updateListArray, isDone}) => {
     //  const handleMarkDone = () => {
     //    markDone(index);
     //  };
-
+    // const tileClassName = ({ date }) => {
+    //   const dateString = date.toISOString().slice(0, 10); // convert date to string in yyyy-mm-dd format
+    //   return taskObj.Dates.includes(dateString) ? "highlight" : "";
+    // };
 
     return (
       <div class="card-wrapper me-5">
@@ -50,18 +54,7 @@ const Card = ({taskObj, index, deleteTask, updateListArray, isDone}) => {
           style={{ "background-color": colors[index % 5].primaryColor }}
         ></div>
         <div class="task-holder">
-          <i
-            class="fas fa-trash-alt"
-            // class={
-            //   isDone
-            //     ? "fa-sharp fa-solid fa-circle-check"
-            //     : "fa-light fa-circle"
-            // }
-            style={{
-              color: colors[index % 5].primaryColor,
-              cursor: "pointer",
-            }}
-          ></i>
+          
           <span
             class="card-header"
             style={{
@@ -72,6 +65,7 @@ const Card = ({taskObj, index, deleteTask, updateListArray, isDone}) => {
             {taskObj.Name}
           </span>
           <p className="mt-3">{taskObj.Description}</p>
+          <h5 className="mt-3">{(JSON.stringify(taskObj.Date)).slice(1,11)}</h5>
 
           <div style={{ position: "absolute", right: "20px", bottom: "20px" }}>
             <i

@@ -1,12 +1,20 @@
 import React from 'react'
-// import Hero from '../components/Hero/Hero'
-import Hero3 from './Hero/Hero'
+import Hero from './Hero/Hero'
+import Services from './Services'
+import Aboutus from './Aboutus'
+import Footer from '../components/Footer/Footer'
+import Navbar from './Navbar'
 
-const Landing = () => {
+const Landing = ({id}) => {
   return (
-    <div>
-    {/* <Hero/> */}
-    <Hero3/>
+    <div style={{padding: '30px'}}>
+    
+      <Navbar/>
+    <Hero id='hero'/>
+    <Services id='services'/>
+    <Aboutus id='aboutus'/>
+    <Footer id='contactus'/>
+
     </div>
   )
 }
