@@ -4,7 +4,6 @@ import EditTask from '../modals/EditTask'
 const Card = ({taskObj, index, deleteTask, updateListArray, isDone}) => {
   // console.log(JSON.stringify(taskObj.Date))
     const [modal, setModal] = useState(false);
-
     const colors = [
         {
             primaryColor : "#5D93E1",
@@ -54,18 +53,19 @@ const Card = ({taskObj, index, deleteTask, updateListArray, isDone}) => {
           style={{ "background-color": colors[index % 5].primaryColor }}
         ></div>
         <div class="task-holder">
-          
           <span
             class="card-header"
             style={{
               "background-color": colors[index % 5].secondaryColor,
-              "border-radius": "10px",
+              "border-radius": "10px", "width":"fit-content"
             }}
           >
             {taskObj.Name}
           </span>
           <p className="mt-3">{taskObj.Description}</p>
-          <h5 className="mt-3">{(JSON.stringify(taskObj.Date)).slice(1,11)}</h5>
+          <h5 className="mt-3">{JSON.stringify(taskObj.Date).slice(1,11)
+          
+          }</h5>
 
           <div style={{ position: "absolute", right: "20px", bottom: "20px" }}>
             <i
