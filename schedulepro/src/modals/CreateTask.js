@@ -10,14 +10,20 @@ import emailjs from "@emailjs/browser";
 const CreateTask = ({ modal, toggle, save, userData }) => {
   const [taskName, setTaskName] = useState("");
   const [description, setDescription] = useState("");
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState();
   const [selectedDates, setSelectedDates] = useState([]);
-
+// const savedDates= []
 
   const handleDate = (date) => {
-    setSelectedDate(date)
-    setSelectedDates([...selectedDates]);
+    // if(selectedDates.includes(date)) {
+    //   setSelectedDates(selectedDates.filter((d) => d !== date))
+    // }
+    //  else {
+    setSelectedDates([...selectedDates, date]);
+    // localStorage.setItem("allDates", selectedDates);
+
     // console.log(date.toISOString());
+    // }
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,18 +34,19 @@ const CreateTask = ({ modal, toggle, save, userData }) => {
       setDescription(value);
     } else {
       setSelectedDate(value);
+      // handleDate(value)
     }
   };
 
   const handleSave = (e) => {
     e.preventDefault();
     let taskObj = {};
-    let savedDates = [];
+    // let savedDates = [];
     taskObj["Name"] = taskName;
     taskObj["Description"] = description;
     taskObj["Date"] = selectedDate;
-    savedDates = selectedDates;
-    save(taskObj,savedDates);
+    // savedDates = selectedDates;
+    save(taskObj);
   };
 
   // useEffect(() => {
@@ -111,10 +118,15 @@ const CreateTask = ({ modal, toggle, save, userData }) => {
       </Modal>
       <br />
       <br />
-      <Calendar
-        value={selectedDates}
-        // tileClassName={tileClassName}
-      />
+      <div className="calendardiv">
+        <Calendar
+        onChange={handleChange}
+          value={selectedDate}
+          style={{
+            width: '100%',
+          }}
+        />
+      </div>
     </>
   );
 };

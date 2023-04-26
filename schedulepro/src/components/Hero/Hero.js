@@ -7,6 +7,7 @@ import styles from "./hero3.module.css";
 import hero4 from "../images/hero4.jpg";
 import Signup from "../Signup";
 import Login from "../Login";
+import Navbar from "../Navbar";
 
 const Hero = () => {
   const navigate = useNavigate();

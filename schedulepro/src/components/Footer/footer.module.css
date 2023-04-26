@@ -1,24 +1,28 @@
 .footerContainer {
 	background: #F6F0FF;
-	padding: 59px 0 110px 0;
+	padding: 60px 60px 110px 60px;
 	font-family: 'Nunito';
+	/* display: grid; */
+	/* grid-template-columns: 2fr 1fr 1fr; */
 }
 
 .footer {
 	color: #282828;
+		padding: 60px 60px 110px 60px;
+
 	display: grid;
-	grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1.5fr 1.5fr 1.5fr;
 }
 
 .brandSocials {
-	display: flex;
-	flex-direction: column;
+	/* display: flex; */
+	/* flex-direction: column; */
 }
 
 .brand {
 	display: flex;
 	align-items: center;
-	gap: 25.53px;
+	/* gap: 25.53px; */
 }
 
 .brand span {
@@ -33,6 +37,7 @@
 	font-weight: 500;
 	font-size: 0.9rem;
 	line-height: 24px;
+	width: 80%;
 }
 
 .socials {
@@ -55,6 +60,7 @@
 	width: 5rem;
 	height: 5rem;
 	border-radius: 50%;
+	margin-left: 65px;
 }
 .socials img {
 	width: 2rem;
@@ -66,10 +72,11 @@
 .company,
 .devAsk,
 .support {
-	justify-self: end;
+	justify-self: center;
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
+	align-items: center;
 }
 
 .product p,

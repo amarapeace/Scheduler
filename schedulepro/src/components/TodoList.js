@@ -17,15 +17,17 @@ const TodoList = ({ selectedDate }) => {
 
   useEffect(() => {
     let arr = localStorage.getItem("taskList");
-    let arr1 = localStorage.getItem("dateList");
+    // let arr1 = localStorage.getItem("dateList");
 
     if (arr) {
       let obj = JSON.parse(arr);
       setTaskList(obj);
     } 
-    // else {
-    //   setDateList(arr1);
+    // else if (arr1) {
+    //   let obj1 =JSON.stringify(arr1).slice(1,11)
+    //   setDateList(arr1)
     // }
+    // 
   }, []);
 
   const deleteTask = (index) => {

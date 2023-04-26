@@ -8,6 +8,7 @@ import Landing from "./components/Landing";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import TodoList from "./components/TodoList";
+import Coming from "./components/Coming";
 // import { createBrowserHistory } from "history";
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/todolist" element={<TodoList />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/coming" element={<Coming />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </Router>
