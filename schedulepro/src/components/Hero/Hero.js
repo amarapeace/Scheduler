@@ -51,7 +51,8 @@ const Hero = () => {
     }};
 
   return (
-    <div className={styles.herosect} style={{ padding: "30px" }} id='hero'>
+    <div className={styles.herosect} style={{ padding: "30px" }}>
+
       <div className={styles.hero}>
         <div className={styles.heroText}>
           <h1>Manage your daily activity so easy</h1>

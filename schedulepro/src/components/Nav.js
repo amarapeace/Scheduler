@@ -4,25 +4,26 @@ import Logo from "./logo.jpeg";
 
 const Navbar = () => {
   return (
-      <nav className="navbar navbar-expand-lg bg-light fw-bolder text-dark sticky-top">
+    <div className="container head">
+      <nav className="navbar navbar-expand-lg bg-light fixed-top container fw-bolder text-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#hero">
+          <a className="navbar-brand" href="/">
             <img src={Logo} className={styles.logo} alt="" />
           </a>
-          {/* <button
+          <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="true"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button> */}
-          <div className="collapse navbar-collapse" id="navbarNav">
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav m-auto">
-              <a className="nav-link mx-5" aria-current='page' href="#hero">
+              <a className="nav-link mx-5" href="#hero">
                 Home
               </a>
               <a className="nav-link mx-5" href="#services">
@@ -38,6 +39,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+    </div>
   );
 };
 

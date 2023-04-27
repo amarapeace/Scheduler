@@ -39,11 +39,11 @@ export const SidebarData = [
     icon: UilPackage,
     heading: "Completed Tasks",
   },
-  {
-    id: "users",
-    icon: UilUsersAlt,
-    heading: "Users",
-  },
+  // {
+  //   id: "users",
+  //   icon: UilUsersAlt,
+  //   heading: "Users",
+  // },
 
   // {
   //   id: "logout",
