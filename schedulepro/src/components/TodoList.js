@@ -50,7 +50,7 @@ const TodoList = ({ selectedDate }) => {
     setModal(!modal);
   };
 
-  const saveTask = (taskObj, savedDates) => {
+  const saveTask = (taskObj) => {
     let tempList = taskList;
     // let tempDates = dateList;
     tempList.push(taskObj);
@@ -60,6 +60,8 @@ const TodoList = ({ selectedDate }) => {
     setTaskList(taskList);
     // setDateList(dateList);
     setModal(false);
+        window.location.reload();
+
   };
 
   return (
@@ -70,7 +72,7 @@ const TodoList = ({ selectedDate }) => {
         </div>
         <div className="mainbar">
           <div className="header text-center">
-            <h3>Todo List</h3>
+            <h3>Task Manager</h3>
             <button
               className="btn btn-primary mt-2"
               onClick={() => setModal(true)}

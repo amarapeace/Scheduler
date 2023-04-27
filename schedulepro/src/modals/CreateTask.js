@@ -10,7 +10,7 @@ import emailjs from "@emailjs/browser";
 const CreateTask = ({ modal, toggle, save, userData }) => {
   const [taskName, setTaskName] = useState("");
   const [description, setDescription] = useState("");
-  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedDates, setSelectedDates] = useState([]);
 // const savedDates= []
 
@@ -19,6 +19,7 @@ const CreateTask = ({ modal, toggle, save, userData }) => {
     //   setSelectedDates(selectedDates.filter((d) => d !== date))
     // }
     //  else {
+      setSelectedDate(date)
     setSelectedDates([...selectedDates, date]);
     // localStorage.setItem("allDates", selectedDates);
 
@@ -122,6 +123,7 @@ const CreateTask = ({ modal, toggle, save, userData }) => {
         <Calendar
         onChange={handleChange}
           value={selectedDate}
+          setTaskName
           style={{
             width: '100%',
           }}
